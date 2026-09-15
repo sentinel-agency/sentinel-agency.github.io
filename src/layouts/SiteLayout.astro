@@ -1,0 +1,36 @@
+---
+const { title, description } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const path = Astro.url.pathname;
+const nav = [
+  ['Employers','employers'],
+  ['Talent','talent'],
+  ['Jobs','jobs'],
+  ['About','about'],
+  ['Contact','contact']
+];
+---
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#0b151b" />
+  <link rel="icon" href={`${base}brand/sentinel-mark.svg`} />
+  <link rel="stylesheet" href={`${base}site.css`} />
+  <title>{title}</title>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href={base}><img src={`${base}brand/sentinel-mark.svg`} alt=""/><span><b>SENTINEL</b><small>AGENCY</small></span></a>
+  <nav>{nav.map(([label,slug]) => <a aria-current={path.includes(`/${slug}`) ? 'page' : undefined} href={`${base}${slug}`}>{label}</a>)}</nav>
+</header>
+<main><slot /></main>
+<footer class="wrap footer">
+  <a class="brand" href={base}><img src={`${base}brand/sentinel-mark.svg`} alt=""/><span><b>SENTINEL</b><small>AGENCY</small></span></a>
+  <p>Austin, Texas · Search · Staffing · Representation · Talent Intelligence</p>
+  <div><a href={`${base}privacy`}>Privacy</a> · <a href={`${base}terms`}>Terms</a></div>
+  <small>© {new Date().getFullYear()} Sentinel Agency</small>
+</footer>
+</body>
+</html>
