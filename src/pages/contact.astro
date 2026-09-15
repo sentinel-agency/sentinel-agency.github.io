@@ -1,0 +1,11 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+const base = import.meta.env.BASE_URL;
+const intent = Astro.url.searchParams.get('for') ?? 'general';
+const role = Astro.url.searchParams.get('role');
+---
+<SiteLayout title="Contact — Sentinel Agency" description="Contact Sentinel Agency for employer search, staffing, candidate representation or recruiting partnerships.">
+<section class="hero wrap"><div><p class="eyebrow">OPEN A CHANNEL</p><h1>Start with the signal.</h1><p class="lede">Tell Sentinel whether you are hiring, exploring a role, or looking for a recruiting partner. The production intake API is being connected; this page establishes the routing and required fields now.</p></div></section>
+<section class="wrap section"><div class="cards"><article><span>01</span><h3>Employer intake</h3><p>Role, outcomes, location, compensation, timing and interview ownership.</p><a class="btn primary" href={`${base}employers`}>Hiring support →</a></article><article><span>02</span><h3>Talent intake</h3><p>Strengths, target work, location, compensation context and constraints.</p><a class="btn primary" href={`${base}talent`}>Candidate representation →</a></article><article><span>03</span><h3>Role interest</h3><p>{role ? `You came in from: ${role}` : 'Browse active searches or join the network for future opportunities.'}</p><a class="btn" href={`${base}jobs`}>Browse jobs →</a></article></div></section>
+<section class="wrap cta"><div><p class="eyebrow">ROUTING STATUS</p><h2>{intent === 'employer' ? 'Employer search intake' : intent === 'talent' ? 'Talent network intake' : intent === 'role' ? 'Role-specific interest' : 'General inquiry'}</h2><p>Until the public intake endpoint is deployed, Sentinel will not collect sensitive candidate or employer data through a static GitHub Pages form. That protects PII from accidental third-party form handling.</p></div><a class="btn" href="https://github.com/sentinel-agency">Organization →</a></section>
+</SiteLayout>
