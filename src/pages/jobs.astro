@@ -1,0 +1,15 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+const base = import.meta.env.BASE_URL;
+const roles = [
+  ['Senior Platform Engineer','Austin / Remote U.S.','Direct hire','Cloud · Kubernetes · Rust/Go'],
+  ['Staff Data Engineer','Remote U.S.','Direct hire','Postgres · Streaming · Data platform'],
+  ['Security Engineer','Austin / Hybrid','Contract-to-hire','Cloud security · IAM · Detection'],
+  ['Technical Program Manager','Remote U.S.','Contract','Platform delivery · Cross-functional']
+];
+---
+<SiteLayout title="Jobs — Sentinel Agency" description="Current technical and operating roles represented by Sentinel Agency.">
+<section class="hero wrap"><div><p class="eyebrow">ACTIVE SEARCHES</p><h1>Roles worth your attention.</h1><p class="lede">This launch board shows representative searches while the live requisition feed is being connected. Every listed role should eventually come from the Sentinel staffing platform, not hard-coded content.</p></div></section>
+<section class="wrap section"><div class="cards">{roles.map(([title,location,type,stack],i)=><article><span>{String(i+1).padStart(2,'0')}</span><h3>{title}</h3><p>{location}</p><p><b>{type}</b></p><p>{stack}</p><a class="btn" href={`${base}contact?for=role&role=${encodeURIComponent(title)}`}>Express interest →</a></article>)}</div></section>
+<section class="wrap cta"><div><p class="eyebrow">DON'T SEE THE FIT YET?</p><h2>Join the network before the role exists.</h2><p>We maintain long-term talent relationships across engineering, infrastructure, data, security, product, design and operations.</p></div><a class="btn primary" href={`${base}talent`}>For talent →</a></section>
+</SiteLayout>

@@ -1,0 +1,9 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<SiteLayout title="Talent — Sentinel Agency" description="Candidate representation, career calibration and selective recruiting introductions from Sentinel Agency in Austin, Texas.">
+<section class="hero wrap"><div><p class="eyebrow">FOR TALENT</p><h1>Representation, not résumé forwarding.</h1><p class="lede">We want to understand the work you are best at, the problems you want next, your constraints, and the companies worth your time.</p><div class="actions"><a class="btn primary" href={`${base}contact?for=talent`}>Join the talent network →</a><a class="btn" href={`${base}jobs`}>Browse roles</a></div></div></section>
+<section class="wrap section"><p class="eyebrow">HOW WE WORK</p><div class="steps"><article><span>01</span><h3>Calibrate</h3><p>Experience, strengths, trajectory, compensation, location and non-negotiables.</p></article><article><span>02</span><h3>Represent</h3><p>Permission-based introductions with clear context instead of mass submissions.</p></article><article><span>03</span><h3>Prepare</h3><p>Interview expectations, company context, evidence mapping and logistics.</p></article><article><span>04</span><h3>Close</h3><p>Offer context, tradeoffs, negotiation support and clean handoff into onboarding.</p></article></div></section>
+<section class="wrap cta"><div><p class="eyebrow">STAY ON RADAR</p><h2>You do not need an immediate opening to join.</h2><p>Long-term candidate relationships are part of the operating model. We would rather know you before the perfect requisition appears.</p></div><a class="btn primary" href={`${base}contact?for=talent`}>Introduce yourself →</a></section>
+</SiteLayout>
