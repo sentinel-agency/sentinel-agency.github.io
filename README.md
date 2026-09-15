@@ -8,7 +8,7 @@ Launch positioning: an Austin, Texas talent agency / staffing firm with employer
 
 - Astro 7
 - Static HTML/CSS (no React)
-- GitHub Pages via GitHub Actions
+- GitHub Pages
 - SVG first-party brand assets
 
 ## Local development
@@ -20,9 +20,13 @@ npm run check
 npm run dev
 ```
 
-## GitHub Pages naming note
+## GitHub Pages
 
-The current repository is named `sentintel-agency.github.io` (extra `t`). GitHub Pages therefore publishes it as a project site until the repository is renamed to `sentinel-agency.github.io`. `astro.config.mjs` detects this automatically.
+This repository is the canonical organization Pages repository: `sentinel-agency/sentinel-agency.github.io`.
+
+Production URL: `https://sentinel-agency.github.io/`
+
+`astro.config.mjs` detects the organization-root Pages repository and builds with `/` as the base path.
 
 ## Brand
 
