@@ -1,0 +1,7 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<SiteLayout title="Not found — Sentinel Agency" description="The requested Sentinel Agency page was not found.">
+<section class="hero wrap"><div><p class="eyebrow">SIGNAL LOST · 404</p><h1>This path is off the map.</h1><p class="lede">The page may have moved, or the route may not be live yet.</p><div class="actions"><a class="btn primary" href={base}>Return to Sentinel →</a><a class="btn" href={`${base}jobs`}>Browse roles</a></div></div></section>
+</SiteLayout>
